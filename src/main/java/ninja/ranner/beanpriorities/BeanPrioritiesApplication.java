@@ -5,6 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
+
+import javax.annotation.Priority;
 
 @SpringBootApplication
 public class BeanPrioritiesApplication {
@@ -13,6 +16,7 @@ public class BeanPrioritiesApplication {
         SpringApplication.run(BeanPrioritiesApplication.class, args);
     }
 
+    @Primary
     @Bean
     @ConditionalOnProperty("demo.repository.dummy")
     FooRepository dummyRepository() {
