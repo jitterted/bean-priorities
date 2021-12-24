@@ -4,13 +4,15 @@ import ninja.ranner.beanpriorities.application.FooEntity;
 import ninja.ranner.beanpriorities.application.FooRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class FooJpaRepositoryAdapter implements FooRepository {
     private final FooJpaRepository jpaRepository;
 
     @Autowired
     public FooJpaRepositoryAdapter(FooJpaRepository jpaRepository) {
+        System.err.println("Real Foo repository created with " + jpaRepository);
         this.jpaRepository = jpaRepository;
     }
 

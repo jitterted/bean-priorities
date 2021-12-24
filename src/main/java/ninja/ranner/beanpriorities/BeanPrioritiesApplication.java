@@ -1,5 +1,6 @@
 package ninja.ranner.beanpriorities;
 
+import ninja.ranner.beanpriorities.application.DummyFooRepository;
 import ninja.ranner.beanpriorities.application.FooRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +16,7 @@ public class BeanPrioritiesApplication {
 
     @Bean
     @ConditionalOnProperty("demo.repository.dummy")
-    FooRepository dummyRepository() {
+    FooRepository createFooRepository() {
         return new DummyFooRepository();
     }
 }

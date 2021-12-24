@@ -1,5 +1,6 @@
 package ninja.ranner.beanpriorities;
 
+import ninja.ranner.beanpriorities.application.DummyFooRepository;
 import ninja.ranner.beanpriorities.application.FooRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
